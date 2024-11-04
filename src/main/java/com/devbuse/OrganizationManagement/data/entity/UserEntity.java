@@ -28,8 +28,12 @@ public class UserEntity implements Serializable {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<EventEntity> eventEntityList;
-
+    @ManyToMany
+    @JoinTable(
+            name = "event_for_organize",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "event_id")
+    )
+    private List<EventEntity> eventEntities;
 
 }

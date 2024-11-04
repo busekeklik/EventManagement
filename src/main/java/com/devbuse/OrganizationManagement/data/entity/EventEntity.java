@@ -35,7 +35,12 @@ public class EventEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date endDate;
 
-    @OneToMany(mappedBy = "event")
+    @ManyToMany
+    @JoinTable(
+            name = "event_organizators",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
     private List<UserEntity> userEntities;
 
     @ManyToMany
