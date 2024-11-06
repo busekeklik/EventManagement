@@ -2,11 +2,13 @@ package com.devbuse.OrganizationManagement.service;
 
 import com.devbuse.OrganizationManagement.data.entity.UserEntity;
 import com.devbuse.OrganizationManagement.data.repository.IUserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class UserService {
 
